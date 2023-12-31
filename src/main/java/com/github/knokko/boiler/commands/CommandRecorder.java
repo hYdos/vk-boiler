@@ -41,6 +41,10 @@ public class CommandRecorder {
         this.context = context;
     }
 
+    public void clearColorImage(long image, int layout, VkClearColorValue clearValue, VkImageSubresourceRange clearRange) {
+        vkCmdClearColorImage(commandBuffer, image, layout, clearValue, clearRange);
+    }
+
     public void copyBuffer(
             long size, long vkSourceBuffer, long sourceOffset,
             long vkDestBuffer, long destOffset
